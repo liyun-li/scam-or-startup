@@ -471,7 +471,7 @@
   "sources": [
    "https://www.sec.gov/newsroom/press-releases/2014-79"
   ],
-  "archive": "https://web.archive.org/web/20131202172954/http://www.telexfree.com/",
+  "archive": "https://web.archive.org/web/20140202042043/http://www.telexfree.com/",
   "img": "img/telexfree.jpg"
  },
  {
@@ -1114,5 +1114,51 @@
   ],
   "archive": "https://web.archive.org/web/20170902074045/https://control-finance.com/",
   "img": "img/controlfin.jpg"
+ },
+ {
+  "id": "blockstream",
+  "answer": "startup",
+  "stamp": "UNICORN",
+  "fact": "Bitcoin infrastructure, including broadcasting the whole blockchain from satellites. $21M seed in 2014; valued at $3.2B in 2021.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Blockstream"
+  ],
+  "archive": "https://web.archive.org/web/20180602230550/http://www.blockstream.com/",
+  "img": "img/blockstream.jpg"
+ },
+ {
+  "id": "bitpay",
+  "answer": "startup",
+  "stamp": "STILL RUNNING",
+  "fact": "Lets shops accept bitcoin at checkout. Raised $30M in 2014; Steam and AMC Theatres later took payments through it.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/BitPay"
+  ],
+  "archive": "https://web.archive.org/web/20140602064735/http://www.bitpay.com/",
+  "img": "img/bitpay.jpg"
+ },
+ {
+  "id": "celo",
+  "answer": "startup",
+  "stamp": "FUNDED",
+  "fact": "A mobile-first blockchain: send stablecoins to any phone number. Andreessen Horowitz bought $15M of its token in 2019.",
+  "sources": [
+   "https://blog.celo.org/the-celo-community-grows-ahead-of-testnet-launch-2f901ae6e309",
+   "https://www.theblock.co/news/business/2019-04-02-crypto-startup-celo-raises-30-million-in-funding-18155"
+  ],
+  "archive": "https://web.archive.org/web/20210228125653/https://celo.org/",
+  "img": "img/celo.jpg"
+ },
+ {
+  "id": "bitwage",
+  "answer": "startup",
+  "stamp": "FUNDED",
+  "fact": "Get your salary in bitcoin without your employer signing up. Raised a $760K seed in 2015 from backers incl. Draper Associates and Orange.",
+  "sources": [
+   "https://www.coindesk.com/markets/2015/11/19/bitcoin-payroll-startup-bitwage-raises-760k",
+   "https://bitwage.com/en-us/blog/bitwage-raises-760k-seed-round-to-build-the-future-of-payroll"
+  ],
+  "archive": "https://web.archive.org/web/20170603083216/https://www.bitwage.com/",
+  "img": "img/bitwage.jpg"
  }
 ]
