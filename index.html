@@ -105,11 +105,13 @@ const $=s=>document.getElementById(s);
 let deck=[],i=0,score=0,streak=0,best=0,miss=0,locked=false,log=[];
 const shuf=a=>{a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a};
 const pick=a=>a[Math.floor(Math.random()*a.length)];
-function build(){const by=t=>shuf(R.filter(r=>r.answer===t));const sc=by("scam"),st=by("startup"),bo=by("both");
+function getSeen(){try{return JSON.parse(localStorage.getItem("sos_seen")||"[]")}catch(e){return []}}
+function addSeen(id){try{const s=getSeen();if(!s.includes(id)){s.push(id);localStorage.setItem("sos_seen",JSON.stringify(s))}}catch(e){}}
+function build(){let seen=getSeen();if(seen.length>=R.length){seen=[];try{localStorage.removeItem("sos_seen")}catch(e){}}const by=t=>{const all=R.filter(r=>r.answer===t);let un=all.filter(r=>!seen.includes(r.id));const old=all.filter(r=>seen.includes(r.id));return [...shuf(un),...shuf(old)]};const sc=by("scam"),st=by("startup"),bo=by("both");
  const nb=Math.min(bo.length,2),ns=Math.min(sc.length,4),nt=N-nb-ns;return shuf([...sc.slice(0,ns),...st.slice(0,nt),...bo.slice(0,nb)])}
 function start(){deck=build();i=0;score=0;streak=0;best=0;miss=0;log=[];$("start").classList.remove("on");$("end").classList.remove("on");$("game").classList.add("on");show()}
 function hud(){$("hud").textContent=`${score}/${N} · 🔥${streak}`;$("prog").style.width=(i/N*100)+"%"}
-function show(){const r=deck[i];locked=false;$("img").src=r.img;$("stamp").className="stamp";$("stamp").textContent="";$("rev").classList.remove("on");$("toast").textContent="";
+function show(){const r=deck[i];addSeen(r.id);locked=false;$("img").src=r.img;$("stamp").className="stamp";$("stamp").textContent="";$("rev").classList.remove("on");$("toast").textContent="";
  ["bScam","bStart"].forEach(b=>{$(b).disabled=false;$(b).classList.remove("picked")});hud();
  if(deck[i+1]){const p=new Image();p.src=deck[i+1].img}}
 function guess(g){if(locked)return;locked=true;const r=deck[i];const ok=r.answer==="both"||r.answer===g;
