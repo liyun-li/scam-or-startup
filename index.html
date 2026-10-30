@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SCAM or STARTUP? 🚩</title>
+<meta name="description" content="Real landing pages. Real outcomes. Guess.">
+<meta property="og:title" content="SCAM or STARTUP? 🚩"><meta property="og:description" content="Real landing pages. Real outcomes. Can you tell?">
+<style>
+:root{--red:#ff2e4d;--grn:#19e07a;--ylw:#ffd400;--bg:#0b0b0f;--card:#16161d}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:#fff;font-family:Impact,"Anton","Arial Black",system-ui,sans-serif;display:flex;justify-content:center;overflow-x:hidden}
+.app{width:100%;max-width:560px;min-height:100%;display:flex;flex-direction:column;padding:12px 14px calc(14px + env(safe-area-inset-bottom));gap:12px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:18px;letter-spacing:.5px}
+.logo{font-size:22px}.logo b{color:var(--red)}.logo i{font-style:normal;color:var(--grn)}
+.pill{background:#22222c;border-radius:999px;padding:6px 12px;font-family:system-ui,sans-serif;font-weight:800;font-size:14px}
+.bar{height:6px;background:#22222c;border-radius:9px;overflow:hidden}.bar>div{height:100%;background:linear-gradient(90deg,var(--red),var(--ylw),var(--grn));width:0;transition:width .3s}
+.shot{position:relative;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:16/10;border:3px solid #2a2a35;box-shadow:0 10px 40px #0008}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.shot .chrome{position:absolute;top:0;left:0;right:0;height:18px;background:#d9d9de;display:flex;gap:5px;align-items:center;padding-left:8px}
+.shot .chrome span{width:7px;height:7px;border-radius:50%;background:#ff5f57}.shot .chrome span:nth-child(2){background:#febc2e}.shot .chrome span:nth-child(3){background:#28c840}
+.shot img{padding-top:18px;background:#fff}
+.stamp{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%) rotate(-14deg) scale(3);opacity:0;border:6px solid currentColor;padding:4px 16px;font-size:clamp(34px,10vw,64px);letter-spacing:2px;border-radius:8px;background:#0007;text-shadow:0 2px 0 #000;white-space:nowrap;pointer-events:none}
+.stamp.on{animation:slam .35s cubic-bezier(.2,1.6,.4,1) forwards}
+@keyframes slam{to{transform:translate(-50%,-50%) rotate(-14deg) scale(1);opacity:1}}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{font-family:inherit;border:0;cursor:pointer;color:#fff;border-radius:16px;font-size:clamp(26px,8vw,40px);padding:18px 6px;letter-spacing:1px;box-shadow:0 6px 0 #0009;transition:transform .08s}
+button:active{transform:translateY(4px);box-shadow:0 2px 0 #0009}
+.scam{background:var(--red)}.startup{background:var(--grn);color:#062}
+button small{display:block;font-family:system-ui;font-size:11px;opacity:.7;letter-spacing:0;margin-top:2px}
+button[disabled]{filter:grayscale(.8) brightness(.6)}
+button.picked{outline:4px solid #fff}
+.rev{display:none;text-align:center;gap:6px;flex-direction:column;align-items:center}
+.rev.on{display:flex}
+.verdict{font-size:clamp(40px,13vw,72px);line-height:1}
+.verdict.ok{color:var(--grn)}.verdict.no{color:var(--red)}
+.ans{font-size:22px;letter-spacing:1px}
+.fact{font-family:system-ui,sans-serif;font-weight:700;font-size:16px;color:#ddd;max-width:440px}
+.src{font-family:system-ui;font-size:11px;color:#777}.src a{color:#999}
+.next{background:#fff;color:#000;width:100%;margin-top:6px;font-size:28px;padding:14px}
+.toast{font-size:20px;color:var(--ylw);min-height:24px;text-align:center}
+.screen{display:none;flex-direction:column;gap:14px;align-items:center;text-align:center;justify-content:center;flex:1}
+.screen.on{display:flex}
+.big{font-size:clamp(54px,17vw,96px);line-height:.9}.big b{color:var(--red)}.big i{font-style:normal;color:var(--grn)}
+.sub{font-family:system-ui;font-weight:700;color:#aaa;font-size:15px}
+.go{background:var(--ylw);color:#000;font-size:34px;padding:16px 40px}
+.score{font-size:96px;line-height:1}.rank{font-size:34px;color:var(--ylw)}
+.grid{font-size:26px;letter-spacing:2px}
+.row{display:flex;gap:10px;width:100%}.row button{flex:1;font-size:24px;padding:14px}
+.share{background:var(--red)}.again{background:#2a2a35}
+.shake{animation:sh .35s}@keyframes sh{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+#game{display:none;flex-direction:column;gap:12px}#game.on{display:flex}
+.foot{font-family:system-ui;font-size:10px;color:#555;text-align:center;margin-top:auto}
+@media(min-width:700px){.app{padding-top:28px}}
+</style></head><body><div class="app">
+<div class="top"><div class="logo"><b>SCAM</b> or <i>STARTUP</i>?</div><div class="pill" id="hud">0/10 · 🔥0</div></div>
+<div class="bar"><div id="prog"></div></div>
+
+<div class="screen on" id="start">
+ <div class="big"><b>SCAM</b><br>or<br><i>STARTUP</i>?</div>
+ <div class="sub">Real websites. Real outcomes. 10 rounds.</div>
+ <button class="go" id="goBtn">PLAY</button>
+</div>
+
+<div id="game">
+ <div class="shot" id="shot"><div class="chrome"><span></span><span></span><span></span></div><img id="img" alt="Archived landing page"><div class="stamp" id="stamp"></div></div>
+ <div class="btns" id="btns">
+  <button class="scam" id="bScam">🚩 SCAM<small>S / ←</small></button>
+  <button class="startup" id="bStart">🚀 STARTUP<small>D / →</small></button>
+ </div>
+ <div class="toast" id="toast"></div>
+ <div class="rev" id="rev">
+  <div class="verdict" id="verdict"></div>
+  <div class="ans" id="ans"></div>
+  <div class="fact" id="fact"></div>
+  <div class="src" id="src"></div>
+  <button class="next" id="next">NEXT →</button>
+ </div>
+</div>
+
+<div class="screen" id="end">
+ <div class="score" id="fscore"></div>
+ <div class="rank" id="frank"></div>
+ <div class="sub" id="fsub"></div>
+ <div class="grid" id="fgrid"></div>
+ <div class="row"><button class="share" id="shareBtn">SHARE 🚩</button><button class="again" id="againBtn">AGAIN</button></div>
+</div>
+<div class="foot">Screenshots via Internet Archive Wayback Machine. Facts linked each round.</div>
+</div>
+<script>
+const R=[{"id": "juicero", "answer": "startup", "stamp": "DEAD", "fact": "Raised $120M. Packs squeezable by hand. Shut down 2017.", "sources": ["https://en.wikipedia.org/wiki/Juicero"], "archive": "https://web.archive.org/web/20170312231658/http://juicero.com/", "img": "img/juicero.jpg"}, {"id": "quibi", "answer": "startup", "stamp": "BURNED", "fact": "Raised $1.75B. Launched Apr 2020. Dead by Dec.", "sources": ["https://en.wikipedia.org/wiki/Quibi", "https://variety.com/2020/digital/news/quibi-officially-shuts-down-1234842926/"], "archive": "https://web.archive.org/web/20200502023752/https://quibi.com/", "img": "img/quibi.jpg"}, {"id": "wework", "answer": "startup", "stamp": "BANKRUPT", "fact": "Peak valuation ~$47B. Chapter 11 in 2023.", "sources": ["https://www.bbc.com/news/business-49817037", "https://en.wikipedia.org/wiki/WeWork"], "archive": "https://web.archive.org/web/20190802013033/http://www.wework.com/", "img": "img/wework.jpg"}, {"id": "pets", "answer": "startup", "stamp": "LIQUIDATED", "fact": "IPO Feb 2000. Liquidated Nov 2000.", "sources": ["https://en.wikipedia.org/wiki/Pets.com"], "archive": "https://web.archive.org/web/20000520063743/http://www.pets.com/", "img": "img/pets.jpg"}, {"id": "humane", "answer": "startup", "stamp": "DISCONTINUED", "fact": "Raised $230M. AI Pin killed. HP bought the rest for $116M.", "sources": ["https://en.wikipedia.org/wiki/Humane_Inc."], "archive": "https://web.archive.org/web/20240501164652/https://humane.com/", "img": "img/humane.jpg"}, {"id": "fast", "answer": "startup", "stamp": "DEAD", "fact": "Raised $124M. Six-figure revenue. Burned ~$10M a month. Dead 2022.", "sources": ["https://techcrunch.com/2022/04/05/fast-shuts-doors-after-slow-growth-high-burn-precluded-fundraising-options/"], "archive": "https://web.archive.org/web/20210303083011/https://www.fast.co/", "img": "img/fast.jpg"}, {"id": "bodega", "answer": "startup", "stamp": "RENAMED", "fact": "Ex-Googlers' vending box. Renamed after backlash. Dead 2020.", "sources": ["https://en.wikipedia.org/wiki/Stockwell_(company)"], "archive": "https://web.archive.org/web/20170916014934/http://www.bodega.ai/", "img": "img/bodega.jpg"}, {"id": "justyo", "answer": "startup", "stamp": "FUNDED", "fact": "An app that only says “Yo”. Raised $1M+.", "sources": ["https://en.wikipedia.org/wiki/Yo_(app)"], "archive": "https://web.archive.org/web/20140801190507/http://justyo.co/", "img": "img/justyo.jpg"}, {"id": "webvan", "answer": "startup", "stamp": "BANKRUPT", "fact": "$375M IPO. Lost $800M+. Bankrupt 2001.", "sources": ["https://en.wikipedia.org/wiki/Webvan"], "archive": "https://web.archive.org/web/20000815052645/http://www.webvan.com/", "img": "img/webvan.jpg"}, {"id": "bitconnect", "answer": "scam", "stamp": "PONZI", "fact": "DOJ: alleged $2.4B Ponzi. Founder indicted, still at large.", "sources": ["https://www.justice.gov/archives/opa/pr/bitconnect-founder-indicted-global-24-billion-cryptocurrency-scheme", "https://en.wikipedia.org/wiki/Bitconnect"], "archive": "https://web.archive.org/web/20170901185400/https://bitconnect.co/", "img": "img/bitconnect.jpg"}, {"id": "onecoin", "answer": "scam", "stamp": "PONZI", "fact": "~$4B Ponzi. Founder on Europe's Most Wanted.", "sources": ["https://en.wikipedia.org/wiki/OneCoin"], "archive": "https://web.archive.org/web/20160602154535/http://onecoin.eu/", "img": "img/onecoin.jpg"}, {"id": "squidgame", "answer": "scam", "stamp": "RUG PULLED", "fact": "Hit $2,860+. Devs vanished with ~$3.4M. Now ~$0.", "sources": ["https://www.cnbc.com/2021/11/02/squid-game-token-cost-one-investor-28000-after-coin-plunged.html", "https://www.wired.com/story/squid-game-coin-crypto-scam/"], "archive": "https://web.archive.org/web/20211031213719/https://squidgame.cash/", "img": "img/squidgame.jpg"}, {"id": "forsage", "answer": "scam", "stamp": "PYRAMID", "fact": "SEC: $300M+ crypto pyramid & Ponzi.", "sources": ["https://www.sec.gov/newsroom/press-releases/2022-134"], "archive": "https://web.archive.org/web/20210517225452/https://forsage.io/", "img": "img/forsage.jpg"}, {"id": "plexcoin", "answer": "scam", "stamp": "FROZEN", "fact": "Promised 1,354% in 29 days. SEC froze it.", "sources": ["https://www.sec.gov/newsroom/press-releases/2017-219"], "archive": "https://web.archive.org/web/20171003050518/http://www.plexcoin.com/", "img": "img/plexcoin.jpg"}, {"id": "hyperverse", "answer": "scam", "stamp": "PYRAMID", "fact": "SEC: $1.7B HyperFund pyramid. UK FCA warned against it.", "sources": ["https://en.wikipedia.org/wiki/HyperVerse", "https://www.sec.gov/newsroom/press-releases/2024-11", "https://www.fca.org.uk/news/warnings/hyperfund-hyperverse-hypernation-hypercommunity"], "archive": "https://web.archive.org/web/20220205115558/https://thehyperverse.net/", "img": "img/hyperverse.jpg"}, {"id": "safemoon", "answer": "scam", "stamp": "FRAUD", "fact": "Hit $8B market cap. CEO convicted of fraud.", "sources": ["https://www.justice.gov/usao-edny/pr/chief-executive-officer-digital-asset-company-found-guilty-multi-million-dollar-crypto"], "archive": "https://web.archive.org/web/20210602165346/https://safemoon.net/", "img": "img/safemoon.jpg"}, {"id": "tbis", "answer": "scam", "stamp": "FAKE", "fact": "Claimed ties to PayPal, Disney & the Fed. SEC halted it.", "sources": ["https://www.sec.gov/newsroom/press-releases/2018-94"], "archive": "https://web.archive.org/web/20171210111550/http://www.tbis.io/", "img": "img/tbis.jpg"}, {"id": "celsius", "answer": "both", "stamp": "BANKRUPT", "fact": "Bankrupt 2022. CEO got 12 years for fraud.", "sources": ["https://en.wikipedia.org/wiki/Celsius_Network", "https://en.wikipedia.org/wiki/Alex_Mashinsky"], "archive": "https://web.archive.org/web/20190528165827/http://www.celsius.network/", "img": "img/celsius.jpg"}, {"id": "irl", "answer": "both", "stamp": "CHARGED", "fact": "Raised ~$170M. SEC charged founder with fraud.", "sources": ["https://www.sec.gov/newsroom/press-releases/2024-92"], "archive": "https://web.archive.org/web/20220601023050/https://www.irl.com/", "img": "img/irl.jpg"}, {"id": "withfrank", "answer": "both", "stamp": "CONVICTED", "fact": "Sold to JPMorgan for $175M. Founder convicted of fraud.", "sources": ["https://en.wikipedia.org/wiki/Charlie_Javice"], "archive": "https://web.archive.org/web/20201101134313/https://withfrank.org/", "img": "img/withfrank.jpg"}, {"id": "nikolamotor", "answer": "both", "stamp": "CONVICTED", "fact": "Founder convicted of fraud 2022. Pardoned 2025. Bankrupt 2025.", "sources": ["https://en.wikipedia.org/wiki/Trevor_Milton", "https://en.wikipedia.org/wiki/Nikola_Corporation"], "archive": "https://web.archive.org/web/20200603073903/https://nikolamotor.com/", "img": "img/nikolamotor.jpg"}];
+const N=10;
+const RIGHT=["DUE DILIGENCE","NAILED IT","CORRECT","SHARP","BASED"],WRONG=["REKT","WRONG","BAGHOLDER","OOF","DOWN BAD"];
+const HYPE={3:"🔥 3 STREAK",5:"🔥🔥 SHORT SELLER ENERGY",7:"🚨 SEC WANTS YOUR NUMBER",10:"👑 FLAWLESS"};
+const COPE={2:"you'd buy the dip",3:"please don't invest",4:"you ARE the exit liquidity",5:"seed round of shame"};
+const RANKS=[[10,"SEC AGENT"],[9,"SHORT SELLER"],[7,"FORENSIC ACCOUNTANT"],[5,"SERIES A BAGHOLDER"],[3,"SOFTBANK PARTNER"],[1,"CRYPTO INFLUENCER"],[0,"EXIT LIQUIDITY"]];
+const $=s=>document.getElementById(s);
+let deck=[],i=0,score=0,streak=0,best=0,miss=0,locked=false,log=[];
+const shuf=a=>{a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a};
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+function build(){const by=t=>shuf(R.filter(r=>r.answer===t));const sc=by("scam"),st=by("startup"),bo=by("both");
+ const nb=Math.min(bo.length,2),ns=Math.min(sc.length,4),nt=N-nb-ns;return shuf([...sc.slice(0,ns),...st.slice(0,nt),...bo.slice(0,nb)])}
+function start(){deck=build();i=0;score=0;streak=0;best=0;miss=0;log=[];$("start").classList.remove("on");$("end").classList.remove("on");$("game").classList.add("on");show()}
+function hud(){$("hud").textContent=`${score}/${N} · 🔥${streak}`;$("prog").style.width=(i/N*100)+"%"}
+function show(){const r=deck[i];locked=false;$("img").src=r.img;$("stamp").className="stamp";$("stamp").textContent="";$("rev").classList.remove("on");$("toast").textContent="";
+ ["bScam","bStart"].forEach(b=>{$(b).disabled=false;$(b).classList.remove("picked")});hud();
+ if(deck[i+1]){const p=new Image();p.src=deck[i+1].img}}
+function guess(g){if(locked)return;locked=true;const r=deck[i];const ok=r.answer==="both"||r.answer===g;
+ if(ok){score++;streak++;best=Math.max(best,streak);miss=0}else{streak=0;miss++;$("shot").classList.remove("shake");void $("shot").offsetWidth;$("shot").classList.add("shake")}
+ log.push(r.answer==="both"?"🤡":ok?"🟩":"🟥");
+ $(g==="scam"?"bScam":"bStart").classList.add("picked");["bScam","bStart"].forEach(b=>$(b).disabled=true);
+ const st=$("stamp");st.textContent=r.stamp;st.style.color=r.answer==="startup"?"var(--grn)":r.answer==="both"?"var(--ylw)":"var(--red)";void st.offsetWidth;st.classList.add("on");
+ $("verdict").textContent=r.answer==="both"?"BOTH 🤡":ok?pick(RIGHT):pick(WRONG);$("verdict").className="verdict "+(ok?"ok":"no");
+ $("ans").textContent=r.answer==="both"?"funded AND charged":r.answer==="scam"?"🚩 SCAM":"🚀 STARTUP";
+ $("fact").textContent=r.fact;
+ $("src").innerHTML=r.sources.map((u,k)=>`<a href="${u}" target="_blank" rel="noopener">source${r.sources.length>1?" "+(k+1):""}</a>`).join(" · ")+` · <a href="${r.archive}" target="_blank" rel="noopener">archive</a>`;
+ $("toast").textContent=ok?(HYPE[streak]||""):(COPE[Math.min(miss,5)]||"");
+ $("rev").classList.add("on");hud();$("next").textContent=i===N-1?"RESULTS →":"NEXT →";$("next").focus({preventScroll:true});
+ $("rev").scrollIntoView({behavior:"smooth",block:"nearest"})}
+function next(){if(!locked)return;i++;if(i>=N)return end();show();window.scrollTo({top:0,behavior:"smooth"})}
+function end(){$("game").classList.remove("on");$("end").classList.add("on");$("prog").style.width="100%";
+ $("fscore").textContent=`${score}/${N}`;$("frank").textContent=RANKS.find(x=>score>=x[0])[1];
+ $("fsub").textContent=`best streak ${best}`;$("fgrid").textContent=log.join("")}
+async function share(){const txt=`I scored ${score}/${N} on Scam or Startup 🚩\n${RANKS.find(x=>score>=x[0])[1]}\n${log.join("")}\n${location.href.startsWith("http")?location.href:""}`.trim();
+ try{if(navigator.share&&/Mobi/i.test(navigator.userAgent)){await navigator.share({text:txt});return}await navigator.clipboard.writeText(txt);$("shareBtn").textContent="COPIED ✅"}catch(e){$("shareBtn").textContent="COPY FAILED"}
+ setTimeout(()=>$("shareBtn").textContent="SHARE 🚩",1800)}
+$("goBtn").onclick=start;$("againBtn").onclick=start;$("bScam").onclick=()=>guess("scam");$("bStart").onclick=()=>guess("startup");$("next").onclick=next;$("shareBtn").onclick=share;
+document.addEventListener("keydown",e=>{const k=e.key.toLowerCase();
+ if($("start").classList.contains("on")||$("end").classList.contains("on")){if(k==="enter"){e.preventDefault();start()}return}
+ if(!locked){if(k==="s"||k==="arrowleft"||k==="1")guess("scam");else if(k==="d"||k==="arrowright"||k==="2")guess("startup")}
+ else if(k==="enter"||k===" "||k==="n"||k==="arrowright"){e.preventDefault();next()}});
+</script></body></html>
