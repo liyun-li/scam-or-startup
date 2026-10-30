@@ -1065,5 +1065,82 @@
   ],
   "archive": "https://web.archive.org/web/20170602060934/http://hashflare.io/",
   "img": "img/hashflare.jpg"
+ },
+ {
+  "id": "blockvest",
+  "answer": "scam",
+  "stamp": "HALTED",
+  "fact": "SEC: ICO falsely claimed SEC approval and invented a fake \"Blockchain Exchange Commission\".",
+  "sources": [
+   "https://www.sec.gov/newsroom/press-releases/2018-232"
+  ],
+  "archive": "https://web.archive.org/web/20180923163138/http://www.blockvest.com/",
+  "img": "img/blockvest.jpg"
+ },
+ {
+  "id": "agridime",
+  "answer": "scam",
+  "stamp": "PONZI",
+  "fact": "Cattle investments paying 15-32% a year. SEC: a $191M Ponzi scheme.",
+  "sources": [
+   "https://www.sec.gov/newsroom/press-releases/2023-250"
+  ],
+  "archive": "https://web.archive.org/web/20230620210935/https://www.agridime.com/",
+  "img": "img/agridime.jpg"
+ },
+ {
+  "id": "gpb",
+  "answer": "scam",
+  "stamp": "PONZI-LIKE",
+  "fact": "Private equity paying 8% a year. SEC: $1.7B \"Ponzi-like scheme\", 17,000+ investors.",
+  "sources": [
+   "https://www.sec.gov/newsroom/press-releases/2021-24"
+  ],
+  "archive": "https://web.archive.org/web/20190113123520/http://www.gpb-cap.com/",
+  "img": "img/gpb.jpg"
+ },
+ {
+  "id": "dcsolar",
+  "answer": "scam",
+  "stamp": "PONZI",
+  "fact": "Mobile solar generators. Up to three-quarters of them never existed. ~$1B Ponzi.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/DC_Solar"
+  ],
+  "archive": "https://web.archive.org/web/20180804162443/http://dcsolar.com/",
+  "img": "img/dcsolar.jpg"
+ },
+ {
+  "id": "driveplanning",
+  "answer": "scam",
+  "stamp": "PONZI",
+  "fact": "Promised 10% every 3 months on real estate. SEC: $300M Ponzi, a $3.1M yacht.",
+  "sources": [
+   "https://www.sec.gov/newsroom/press-releases/2024-97"
+  ],
+  "archive": "https://web.archive.org/web/20230610175453/https://driveplanning.com/",
+  "img": "img/driveplanning.jpg"
+ },
+ {
+  "id": "forcount",
+  "answer": "scam",
+  "stamp": "PONZI",
+  "fact": "Promised daily returns and doubling in 6 months. DOJ: a Ponzi; a top promoter got 20 years.",
+  "sources": [
+   "https://www.justice.gov/usao-sdny/pr/senior-promoter-cryptocurrency-ponzi-scheme-sentenced-240-months-prison"
+  ],
+  "archive": "https://web.archive.org/web/20191018122044/https://www.forcount.com/",
+  "img": "img/forcount.jpg"
+ },
+ {
+  "id": "kubient",
+  "answer": "both",
+  "stamp": "GUILTY",
+  "fact": "Nasdaq ad-tech IPO touting an \"AI\" fraud detector. Founder pleaded guilty: the AI never scanned the client data.",
+  "sources": [
+   "https://www.justice.gov/usao-sdny/pr/former-ceo-kubient-inc-charged-and-pleads-guilty-connection-accounting-fraud-scheme"
+  ],
+  "archive": "https://web.archive.org/web/20210611123543/https://kubient.com/",
+  "img": "img/kubient.jpg"
  }
 ]
