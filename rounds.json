@@ -33,17 +33,6 @@
   "img": "img/clinkle.jpg"
  },
  {
-  "id": "color",
-  "answer": "startup",
-  "stamp": "DEAD",
-  "fact": "Raised $41M before launch. Shut down in 2012.",
-  "sources": [
-   "https://en.wikipedia.org/wiki/Color_Labs"
-  ],
-  "archive": "https://web.archive.org/web/20110501060239/http://www.color.com/",
-  "img": "img/color.jpg"
- },
- {
   "id": "homejoy",
   "answer": "startup",
   "stamp": "DEAD",
@@ -112,17 +101,6 @@
   "img": "img/tbis.jpg"
  },
  {
-  "id": "juicyfields",
-  "answer": "scam",
-  "stamp": "PONZI",
-  "fact": "Cannabis \"e-growing\". About €645M from 186,000 people.",
-  "sources": [
-   "https://en.wikipedia.org/wiki/JuicyFields"
-  ],
-  "archive": "https://web.archive.org/web/20210614235832/https://juicyfields.io/",
-  "img": "img/juicyfields.jpg"
- },
- {
   "id": "zeekrewards",
   "answer": "scam",
   "stamp": "PONZI",
@@ -132,17 +110,6 @@
   ],
   "archive": "https://web.archive.org/web/20120301074133/http://zeekrewards.com/",
   "img": "img/zeekrewards.jpg"
- },
- {
-  "id": "telexfree",
-  "answer": "scam",
-  "stamp": "PYRAMID",
-  "fact": "SEC: ~$1.3M in real VoIP sales vs $1.1B promised to promoters.",
-  "sources": [
-   "https://www.sec.gov/newsroom/press-releases/2014-79"
-  ],
-  "archive": "https://web.archive.org/web/20130928114633/http://www.telexfree.com/",
-  "img": "img/telexfree.jpg"
  },
  {
   "id": "vemma",
@@ -299,17 +266,6 @@
   "img": "img/withfrank.jpg"
  },
  {
-  "id": "outcomehealth",
-  "answer": "both",
-  "stamp": "CONVICTED",
-  "fact": "Valued at $5.6B by Goldman and others. Founders convicted of fraud.",
-  "sources": [
-   "https://en.wikipedia.org/wiki/Outcome_Health"
-  ],
-  "archive": "https://web.archive.org/web/20170601221009/http://www.outcomehealth.com/",
-  "img": "img/outcomehealth.jpg"
- },
- {
   "id": "headspin",
   "answer": "both",
   "stamp": "CHARGED",
@@ -385,17 +341,6 @@
   ],
   "archive": "https://web.archive.org/web/20210303083011/http://fast.co/",
   "img": "img/fast.jpg"
- },
- {
-  "id": "bitclub",
-  "answer": "scam",
-  "stamp": "FRAUD",
-  "fact": "DOJ: a crypto-mining fraud worth at least $722M. Its own coder called it \"ponzi teritori\".",
-  "sources": [
-   "https://www.justice.gov/usao-nj/pr/romanian-programmer-admits-he-helped-create-bitclub-network-fraud-scheme-worth-least-722"
-  ],
-  "archive": "https://web.archive.org/web/20170602214559/https://bitclubnetwork.com/",
-  "img": "img/bitclub.jpg"
  },
  {
   "id": "thodex",
@@ -497,17 +442,6 @@
   "img": "img/meta1.jpg"
  },
  {
-  "id": "irl",
-  "answer": "both",
-  "stamp": "CHARGED",
-  "fact": "Raised ~$170M. SEC charged founder with fraud.",
-  "sources": [
-   "https://www.sec.gov/newsroom/press-releases/2024-92"
-  ],
-  "archive": "https://web.archive.org/web/20220601023050/http://irl.com/",
-  "img": "img/irl.jpg"
- },
- {
   "id": "kubient",
   "answer": "both",
   "stamp": "GUILTY",
@@ -517,6 +451,50 @@
   ],
   "archive": "https://web.archive.org/web/20210611123543/http://kubient.com/",
   "img": "img/kubient.jpg"
+ },
+ {
+  "id": "color",
+  "answer": "startup",
+  "stamp": "DEAD",
+  "fact": "Raised $41M before launch. Shut down in 2012.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Color_Labs"
+  ],
+  "archive": "https://web.archive.org/web/20110629165846/http://www.color.com/",
+  "img": "img/color.jpg"
+ },
+ {
+  "id": "telexfree",
+  "answer": "scam",
+  "stamp": "PYRAMID",
+  "fact": "SEC: ~$1.3M in real VoIP sales vs $1.1B promised to promoters.",
+  "sources": [
+   "https://www.sec.gov/newsroom/press-releases/2014-79"
+  ],
+  "archive": "https://web.archive.org/web/20131202172954/http://www.telexfree.com/",
+  "img": "img/telexfree.jpg"
+ },
+ {
+  "id": "outcomehealth",
+  "answer": "both",
+  "stamp": "CONVICTED",
+  "fact": "Valued at $5.6B by Goldman and others. Founders convicted of fraud.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Outcome_Health"
+  ],
+  "archive": "https://web.archive.org/web/20170212225437/http://www.outcomehealth.com/",
+  "img": "img/outcomehealth.jpg"
+ },
+ {
+  "id": "juicyfields",
+  "answer": "scam",
+  "stamp": "PONZI",
+  "fact": "Cannabis \"e-growing\". About €645M from 186,000 people.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/JuicyFields"
+  ],
+  "archive": "https://web.archive.org/web/20211016113201/https://juicyfields.io/",
+  "img": "img/juicyfields.jpg"
  },
  {
   "id": "aardvark",
@@ -561,17 +539,6 @@
   ],
   "archive": "https://web.archive.org/web/20130302055026/http://bu.mp/",
   "img": "img/bump.jpg"
- },
- {
-  "id": "cuil",
-  "answer": "startup",
-  "stamp": "DEAD",
-  "fact": "Ex-Googlers' search engine. Launched in 2008 with 121B pages indexed. Servers off by 2010.",
-  "sources": [
-   "https://en.wikipedia.org/wiki/Cuil"
-  ],
-  "archive": "https://web.archive.org/web/20080901211548/http://www.cuil.com/",
-  "img": "img/cuil.jpg"
  },
  {
   "id": "diaspora",
@@ -717,17 +684,6 @@
   "img": "img/meerkat.jpg"
  },
  {
-  "id": "ouya",
-  "answer": "startup",
-  "stamp": "FLOP",
-  "fact": "$99 Android game console. Raised $8.5M on Kickstarter. A commercial failure; Razer bought its software assets in 2015.",
-  "sources": [
-   "https://en.wikipedia.org/wiki/Ouya"
-  ],
-  "archive": "https://web.archive.org/web/20130529175953/http://www.ouya.tv/",
-  "img": "img/ouya.jpg"
- },
- {
   "id": "path",
   "answer": "startup",
   "stamp": "DEAD",
@@ -794,28 +750,6 @@
   "img": "img/socialcam.jpg"
  },
  {
-  "id": "tellme",
-  "answer": "startup",
-  "stamp": "ACQUIRED",
-  "fact": "Voice portal: call 1-800-555-TELL. Microsoft paid about $800M in 2007.",
-  "sources": [
-   "https://en.wikipedia.org/wiki/Tellme_Networks"
-  ],
-  "archive": "https://web.archive.org/web/20050607081820/http://www.tellme.com/",
-  "img": "img/tellme.jpg"
- },
- {
-  "id": "theglobe",
-  "answer": "startup",
-  "stamp": "IPO'D",
-  "fact": "Early social network. Its 1998 IPO jumped 606% on day one, a record at the time.",
-  "sources": [
-   "https://en.wikipedia.org/wiki/TheGlobe.com"
-  ],
-  "archive": "https://web.archive.org/web/19990427060331/http://www.theglobe.com/",
-  "img": "img/theglobe.jpg"
- },
- {
   "id": "turntable",
   "answer": "startup",
   "stamp": "DEAD",
@@ -825,17 +759,6 @@
   ],
   "archive": "https://web.archive.org/web/20130317104337/http://turntable.fm/",
   "img": "img/turntable.jpg"
- },
- {
-  "id": "viaweb",
-  "answer": "startup",
-  "stamp": "ACQUIRED",
-  "fact": "Build an online store in your web browser. Yahoo paid about $49M in stock in 1998.",
-  "sources": [
-   "https://en.wikipedia.org/wiki/Viaweb"
-  ],
-  "archive": "https://web.archive.org/web/19971022011328/http://www.viaweb.com/",
-  "img": "img/viaweb.jpg"
  },
  {
   "id": "zirtual",
@@ -1112,5 +1035,84 @@
   ],
   "archive": "https://web.archive.org/web/20190531215633/http://amlbitcoin.com/",
   "img": "img/amlbitcoin.jpg"
+ },
+ {
+  "id": "jibo",
+  "answer": "startup",
+  "stamp": "SHUT DOWN",
+  "fact": "Billed as the first social robot for the home. ~$3.7M crowdfunded, ~$73M from VCs, $899 at launch. Its servers went dark in 2019.",
+  "sources": [
+   "https://www.bbc.com/news/technology-47454599"
+  ],
+  "archive": "https://web.archive.org/web/20180305014916/https://www.jibo.com/",
+  "img": "img/jibo.jpg"
+ },
+ {
+  "id": "juno",
+  "answer": "startup",
+  "stamp": "ACQUIRED",
+  "fact": "NYC ride-hailing that promised drivers half of the founders' equity. Bought by Gett in 2017 for $200M.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Juno_(company)"
+  ],
+  "archive": "https://web.archive.org/web/20170215130905/https://www.gojuno.com/",
+  "img": "img/juno.jpg"
+ },
+ {
+  "id": "hellosense",
+  "answer": "startup",
+  "stamp": "SHUT DOWN",
+  "fact": "A bedside orb that tracks your sleep. $2.4M from 19,000+ Kickstarter backers. Shut down in June 2017.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hello_(company)"
+  ],
+  "archive": "https://web.archive.org/web/20170216220737/http://hello.is/",
+  "img": "img/hellosense.jpg"
+ },
+ {
+  "id": "luxe",
+  "answer": "startup",
+  "stamp": "ACQUIRED",
+  "fact": "On-demand valets who park, fuel and wash your car. Stopped valet service in April 2017; Volvo bought it months later.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Luxe_(company)"
+  ],
+  "archive": "https://web.archive.org/web/20160604172932/http://luxe.com/",
+  "img": "img/luxe.jpg"
+ },
+ {
+  "id": "vessyl",
+  "answer": "startup",
+  "stamp": "NEVER SHIPPED",
+  "fact": "A smart cup that tells you exactly what you're drinking. Announced 2014; shipping slipped again and again and it never came out.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Vessyl"
+  ],
+  "archive": "https://web.archive.org/web/20150528020540/http://myvessyl.com/",
+  "img": "img/vessyl.jpg"
+ },
+ {
+  "id": "slync",
+  "answer": "both",
+  "stamp": "CONVICTED",
+  "fact": "Logistics software that raised ~$67M. SEC: the CEO inflated revenue and diverted $28M+, including a $16M private jet. 20 years.",
+  "sources": [
+   "https://www.sec.gov/newsroom/press-releases/2023-26",
+   "https://www.ca5.uscourts.gov/opinions/pub/24/24-10644-CR0.pdf"
+  ],
+  "archive": "https://web.archive.org/web/20211226035645/https://www.slync.io/",
+  "img": "img/slync.jpg"
+ },
+ {
+  "id": "controlfin",
+  "answer": "scam",
+  "stamp": "$571M JUDGMENT",
+  "fact": "Bitcoin \"trading\" with guaranteed daily profits. CFTC: it made no trades and posted fake trade reports; ~$143M in bitcoin, $13K returned.",
+  "sources": [
+   "https://www.cftc.gov/PressRoom/PressReleases/8371-21",
+   "https://www.cftc.gov/PressRoom/PressReleases/7938-19"
+  ],
+  "archive": "https://web.archive.org/web/20170902074045/https://control-finance.com/",
+  "img": "img/controlfin.jpg"
  }
 ]
