@@ -101,12 +101,48 @@ button.picked{outline:4px solid #fff}
 #rev .verdict,#verdict{font-size:clamp(48px,6vw,84px)}
 .fact{font-size:clamp(16px,1.4vw,22px);max-width:760px}
 }
-</style></head><body><div class="app">
+</style><style id="fitcss">
+button,.rev,.toast,.btns{touch-action:manipulation}
+/* fit the viewport at every size: the photo shrinks/grows to the space left, nothing scrolls */
+.top{gap:8px;flex:none}.logo{font-size:clamp(14px,min(5.6vw,6dvh),22px);white-space:nowrap;min-width:0}
+.pill{white-space:nowrap;font-size:clamp(11px,min(3.8vw,4dvh),14px);padding:clamp(3px,1dvh,6px) clamp(8px,2.6vw,12px)}
+.app{gap:clamp(6px,1.6dvh,12px)}
+.bar{flex:none}
+.screen{min-height:0;gap:clamp(8px,2.2dvh,14px)}
+#start .big{font-size:clamp(28px,min(17vw,13dvh),96px)}
+#start .go{font-size:clamp(22px,min(8vw,7dvh),34px);padding:clamp(8px,2dvh,16px) 40px}
+#end .score{font-size:clamp(44px,min(24vw,15dvh),96px)}#end .rank{font-size:clamp(20px,min(8vw,6dvh),34px)}
+#end .grid{font-size:clamp(18px,min(6.4vw,5dvh),26px)}
+#end .row button{font-size:clamp(18px,min(6vw,5dvh),24px);padding:clamp(8px,2dvh,14px)}
+.src a,.foot a{padding:.6em .2em;margin:-.6em -.05em}
+#game .shot{margin-left:auto;margin-right:auto}
+#game .verdict{font-size:clamp(28px,min(12vw,8dvh),60px)}
+#game .ans{font-size:clamp(16px,min(5.6vw,4dvh),22px)}
+#game .fact{font-size:clamp(13px,min(4.2vw,2.6dvh),16px)}
+#game .next{font-size:clamp(20px,min(7vw,5.4dvh),28px);padding:clamp(8px,2.2dvh,18px)}
+#game .rev{gap:clamp(2px,.8dvh,6px)}
+@media(max-width:699px){#game .btns button{height:clamp(56px,17dvh,160px)}}
+@media(max-width:360px){#game .btns button{font-size:clamp(16px,6.2vw,34px)}}
+/* short landscape phones: photo left, buttons / reveal right */
+@media (orientation:landscape) and (max-height:600px) and (max-width:999px){
+.app{max-width:none;padding-top:calc(6px + env(safe-area-inset-top));padding-bottom:calc(6px + env(safe-area-inset-bottom))}
+#game.on{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,38%);grid-template-rows:auto auto 1fr;column-gap:16px;row-gap:8px;align-items:start}
+#game .shot{grid-column:1;grid-row:1/4;margin:0 auto}
+#game .btns{grid-column:2;grid-row:1;grid-template-columns:1fr;gap:12px;align-self:center}
+#game .btns button{height:auto;padding:clamp(10px,6dvh,28px) 4px;font-size:clamp(20px,min(4vw,8dvh),34px)}
+#game .toast{grid-column:2;grid-row:2}
+#game .rev{grid-column:2;grid-row:3}
+#game.done .btns{display:none}
+#start .big br{display:none}
+#start .big{font-size:clamp(28px,min(9vw,16dvh),96px)}
+}
+</style>
+</head><body><div class="app">
 <div class="top"><div class="logo"><b>SCAM</b> or <i>STARTUP</i>?</div><div class="pill" id="hud">0/10 · 🔥0</div></div>
 <div class="bar"><div id="prog"></div></div>
 
 <div class="screen on" id="start">
- <div class="big"><b>SCAM</b><br>or<br><i>STARTUP</i>?</div>
+ <div class="big"><b>SCAM</b> <br>or <br><i>STARTUP</i>?</div>
  <div class="sub">Real websites. Real outcomes. 10 rounds.</div>
  <button class="go" id="goBtn">PLAY</button>
 </div>
@@ -154,9 +190,10 @@ function build(){const ids=new Set(R.map(r=>r.id));let seen=getSeen().filter(x=>
 function start(){deck=build();i=0;score=0;streak=0;best=0;miss=0;log=[];$("start").classList.remove("on");$("end").classList.remove("on");$("game").classList.add("on");if(window.fitGame)fitGame();show()}
 function hud(){$("hud").textContent=`${score}/${N} · 🔥${streak}`;$("prog").style.width=(i/N*100)+"%"}
 function show(){const r=deck[i];if(window.pzGame)pzGame.reset();if(window.zoomClose)zoomClose();addSeen(r.id);locked=false;$("img").src=r.img;$("stamp").className="stamp";$("stamp").textContent="";$("rev").classList.remove("on");$("game").classList.remove("done");$("toast").textContent="";
- ["bScam","bStart"].forEach(b=>{$(b).disabled=false;$(b).classList.remove("picked")});hud();
+ ["bScam","bStart"].forEach(b=>{$(b).disabled=false;$(b).classList.remove("picked")});hud();stepAt=Date.now();if(window.fitGame)fitGame();
  if(deck[i+1]){const p=new Image();p.src=deck[i+1].img}}
-function guess(g){if(locked)return;locked=true;const r=deck[i];const ok=r.answer==="both"||r.answer===g;
+let stepAt=0;const guarded=()=>Date.now()-stepAt<350;
+function guess(g){if(locked||guarded())return;locked=true;const r=deck[i];const ok=r.answer==="both"||r.answer===g;
  if(ok){score++;streak++;best=Math.max(best,streak);miss=0}else{streak=0;miss++;$("shot").classList.remove("shake");void $("shot").offsetWidth;$("shot").classList.add("shake")}
  log.push(r.answer==="both"?"🤡":ok?"🟩":"🟥");
  $(g==="scam"?"bScam":"bStart").classList.add("picked");["bScam","bStart"].forEach(b=>$(b).disabled=true);
@@ -166,9 +203,9 @@ function guess(g){if(locked)return;locked=true;const r=deck[i];const ok=r.answer
  $("fact").textContent=r.fact;
  $("src").innerHTML=r.sources.map((u,k)=>`<a href="${u}" target="_blank" rel="noopener">source${r.sources.length>1?" "+(k+1):""}</a>`).join(" · ")+` · <a href="${r.archive}" target="_blank" rel="noopener">archive</a>`;
  $("toast").textContent=ok?(HYPE[streak]||""):(COPE[Math.min(miss,5)]||"");
- $("rev").classList.add("on");$("game").classList.add("done");hud();$("next").textContent=i===N-1?"RESULTS →":"NEXT →";$("next").focus({preventScroll:true});
- $("rev").scrollIntoView({behavior:"smooth",block:"nearest"})}
-function next(){if(!locked)return;i++;if(i>=N)return end();show();window.scrollTo({top:0,behavior:"smooth"})}
+ $("rev").classList.add("on");$("game").classList.add("done");stepAt=Date.now();if(window.fitGame)fitGame();hud();$("next").textContent=i===N-1?"RESULTS →":"NEXT →";$("next").focus({preventScroll:true});
+ }
+function next(){if(!locked||guarded())return;i++;if(i>=N)return end();show();window.scrollTo({top:0,behavior:"smooth"})}
 function end(){$("game").classList.remove("on");$("end").classList.add("on");$("prog").style.width="100%";
  $("fscore").textContent=`${score}/${N}`;$("frank").textContent=RANKS.find(x=>score>=x[0])[1];
  $("fsub").textContent=`best streak ${best}`;$("fgrid").textContent=log.join("")}
@@ -227,11 +264,21 @@ function open(){zi.src=img.src;z.classList.add("on");zp.reset();layout();if(!zi.
 function close(){z.classList.remove("on");zp.reset()}
 const gp=PZ(document.getElementById("vp"),img,{onTap:(x,y,s)=>{if(s<=1.01)open()},mouseClick:e=>{if(!gp.dragging&&gp.st.s<=1.01)open()},onChange:s=>{hint.style.opacity=s>1.01?0:1}});
 const vpEl=document.getElementById("vp"),game=document.getElementById("game");
-function fitGame(){const mob=innerWidth<700;if(!mob){vpEl.style.height="";vpEl.style.aspectRatio="";img.style.width="";gp.apply(false);return}
- const w=vpEl.clientWidth,h0=w*.625,btns=document.getElementById("btns"),foot=document.querySelector(".foot"),app=document.querySelector(".app");
- const vh=window.visualViewport?visualViewport.height:innerHeight,pb=parseFloat(getComputedStyle(app).paddingBottom)||0;
- const used=game.getBoundingClientRect().top+scrollY+(btns.offsetHeight||110)+12+foot.offsetHeight+12+pb+18+6+24;
- const f=Math.max(1,Math.min(1.25,(vh-used)/h0));vpEl.style.aspectRatio="auto";vpEl.style.height=Math.round(h0*f)+"px";img.style.width=(f*100)+"%";gp.apply(false)}
+function fitGame(){const shot=document.getElementById("shot"),app=document.querySelector(".app");
+ vpEl.style.height="";vpEl.style.aspectRatio="";img.style.width="";shot.style.width="";
+ if(!game.classList.contains("on")){gp.apply(false);return}
+ const side=getComputedStyle(game).display==="grid",big=innerWidth>=1000&&!matchMedia("(orientation:landscape) and (max-height:600px)").matches;
+ if(big){gp.apply(false);return}
+ if(side)shot.style.width="100%";
+ const W=vpEl.clientWidth,bw=shot.offsetWidth-W,h0=W*.625,vh=window.visualViewport?visualViewport.height:innerHeight;
+ vpEl.style.aspectRatio="auto";vpEl.style.height="0px";const mh=app.style.minHeight,hh=app.style.height;app.style.minHeight="0";app.style.height="auto";
+ let other;if(side){const foot=document.querySelector(".foot"),cs=getComputedStyle(app);other=game.getBoundingClientRect().top+scrollY+shot.offsetHeight+(foot?foot.offsetHeight:0)+(parseFloat(cs.paddingBottom)||0)+(parseFloat(cs.rowGap)||0)}
+ else other=app.offsetHeight;
+ app.style.minHeight=mh;app.style.height=hh;
+ const avail=Math.floor(vh-other-2);
+ if(avail>=h0){const f=side?1:Math.min(1.25,avail/h0);vpEl.style.height=Math.round(h0*f)+"px";img.style.width=(f*100)+"%"}
+ else{const h=Math.max(40,avail),k=h/h0;vpEl.style.height=h+"px";shot.style.width=Math.floor(W*k+bw)+"px"}
+ gp.apply(false)}
 window.fitGame=fitGame;
 window.pzGame=gp;window.pzZoom=zp;window.zoomClose=close;
 zx.addEventListener("click",e=>{e.stopPropagation();close()});
