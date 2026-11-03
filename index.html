@@ -269,12 +269,12 @@ function fitGame(){const shot=document.getElementById("shot"),app=document.query
  if(!game.classList.contains("on")){gp.apply(false);return}
  const side=getComputedStyle(game).display==="grid",big=innerWidth>=1000&&!matchMedia("(orientation:landscape) and (max-height:600px)").matches;
  if(big){gp.apply(false);return}
- if(side)shot.style.width="100%";
+ shot.style.width="100%";
  const W=vpEl.clientWidth,bw=shot.offsetWidth-W,h0=W*.625,vh=window.visualViewport?visualViewport.height:innerHeight;
- vpEl.style.aspectRatio="auto";vpEl.style.height="0px";const mh=app.style.minHeight,hh=app.style.height;app.style.minHeight="0";app.style.height="auto";
+ vpEl.style.aspectRatio="auto";vpEl.style.height="0px";const mh=app.style.minHeight,hh=app.style.height,as=app.style.alignSelf;app.style.minHeight="0";app.style.height="auto";app.style.alignSelf="flex-start";
  let other;if(side){const foot=document.querySelector(".foot"),cs=getComputedStyle(app);other=game.getBoundingClientRect().top+scrollY+shot.offsetHeight+(foot?foot.offsetHeight:0)+(parseFloat(cs.paddingBottom)||0)+(parseFloat(cs.rowGap)||0)}
  else other=app.offsetHeight;
- app.style.minHeight=mh;app.style.height=hh;
+ app.style.minHeight=mh;app.style.height=hh;app.style.alignSelf=as;
  const avail=Math.floor(vh-other-2);
  if(avail>=h0){const f=side?1:Math.min(1.25,avail/h0);vpEl.style.height=Math.round(h0*f)+"px";img.style.width=(f*100)+"%"}
  else{const h=Math.max(40,avail),k=h/h0;vpEl.style.height=h+"px";shot.style.width=Math.floor(W*k+bw)+"px"}
